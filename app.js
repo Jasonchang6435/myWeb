@@ -1,28 +1,30 @@
+// express
 const express = require('express')
-
 const nunjucks = require('nunjucks')
-
 const bodyParser = require('body-parser')
-
-const session = require('cookie-session')
-
+// const session = require('cookie-session')
 const cors = require('cors')
-
 const cookieParser = require('cookie-parser')
 
+// config
 const { log } = require('./utils')
-
 // const { secretKey } = require('./config')
 
 const app = express()
 
-app.use(cors())
+nunjucks.configure('templates', {
+    autoescape: true,
+    express: app,
+    noCache: true,
+})
 
 app.use(bodyParser.urlencoded({
     extended: false,
 }))
 
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.use(cookieParser())
 
@@ -36,11 +38,6 @@ app.use(cookieParser())
 //         //24 hours
 // }))
 
-nunjucks.configure('templates', {
-    autoescape: true,
-    express: app,
-    noCache: true,
-})
 
 // const asset = __dirname + '/static'
 // app.use('/static', express.static(asset))
