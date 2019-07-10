@@ -1,10 +1,22 @@
 {
+  "name": "fast-server",
+  "version": "1.0.0",
+  "description": "fast start server for outpackage powered by express-mongo micro-framework",
+  "main": "./app.js",
   "scripts": {
     "start": "pm2 start app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "todo: package fe work"
   },
+  "files": [
+    "**"
+  ],
+  "keywords": ["express", "mongodb", "mongoose", "front-end"],
+  "author": "jason chang",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "chalk": "^2.4.2",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.2",
     "cors": "^2.8.3",
