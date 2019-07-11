@@ -36,29 +36,19 @@ nunjucks.configure('templates', {
 app.use(express.static('static'))
 
 // router
+const index = require('./routes/index')
+const error = require('./routes/error')
 // const topic = require('./routes/topic')
 // const reply = require('./routes/reply')
-const index = require('./routes/index')
-
 // 使用 app.use(path, route) 的方式注册路由程序
 app.use('/', index)
+app.use('/', error)
 // app.use('/topic', topic)
 // app.use('/reply', reply)
 // const apiTopic = require('./api/topic')
 // app.use('/api/topic', apiTopic)
 
-app.use((request, response,next) => {
-    const r = response.status(404)
-    r.render('error/404.html')
-})
-
-app.use((error, request, response,next) => {
-    // console.error(error.stack)
-    log(chalk.white.bgBlack.bold(`error.stack`, error.stack))
-    const r = response.status(500)
-    r.render('error/500.html')
-})
-
+// run
 const run = (port=3000, host='') => {
     const server = app.listen(port, host, () => {
         const address = server.address()

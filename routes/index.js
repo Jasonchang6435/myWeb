@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // 
-const { log, chalk } = require('../utils')
+// const { log, chalk } = require('../utils')
 
 // 
 router.get('/',(req,res) => {
