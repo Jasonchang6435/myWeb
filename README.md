@@ -4,10 +4,12 @@
 
 ### TODO
 
+- update md
 - login/register
 - front-end framework
 - blog
 - mongo/mongoose + redis
+
 ==========================
 
 
