@@ -38,11 +38,13 @@ app.use(express.static('static'))
 // router
 const index = require('./routes/index')
 const error = require('./routes/error')
+const api = require('./routes/api')
 // const topic = require('./routes/topic')
 // const reply = require('./routes/reply')
 // 使用 app.use(path, route) 的方式注册路由程序
 app.use('/', index)
 app.use('/', error)
+app.use('/api', api)
 // app.use('/topic', topic)
 // app.use('/reply', reply)
 // const apiTopic = require('./api/topic')

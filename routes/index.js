@@ -24,4 +24,13 @@ router.get('/local',(req,res) => {
     res.send(JSON.stringify(d))
 })
 
+router.get('/login', (req,res) => {
+    const id = User.get()
+    let d = {
+        "message": "this is api success message" + id,
+        "data": null
+    }
+    res.send(JSON.stringify(d))
+  })
+
 module.exports = router
